@@ -77,7 +77,7 @@ def render_predict():
         
 def render_overview():
     st.header("Asthma in Children")
-
+    st.image('../assets/asthma.jpeg',use_column_width=True)
     st.markdown(
         """
         Asthma is a chronic condition that affects the airways, causing inflammation and narrowing 
@@ -142,6 +142,16 @@ def render_overview():
         - Regular follow-up: Children with asthma should have regular follow-up visits with 
           healthcare providers to assess asthma control, adjust treatment as needed, and provide 
           education and support to families.
+        """
+    )
+    add_vertical_space(2)
+    
+    st.markdown(
+        """
+        Managing asthma in children requires a multidisciplinary approach involving healthcare 
+        providers, parents, caregivers, and school personnel. It's essential to educate children 
+        and families about asthma, provide support, and ensure access to appropriate medical care 
+        and resources.
         """
     )
     

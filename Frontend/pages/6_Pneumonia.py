@@ -62,7 +62,7 @@ def visualize_confusion_matrix():
 
 def render_overview():
     st.header("Pneumonia in Children")
-
+    st.image('../assets/pnemonia.png',use_column_width=True)
     st.markdown(
         """
         Pneumonia is an infection that inflames the air sacs in one or both lungs. 
