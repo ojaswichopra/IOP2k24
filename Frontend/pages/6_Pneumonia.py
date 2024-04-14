@@ -14,21 +14,21 @@ def authenticated_menu():
     st.sidebar.page_link("pages/5_Jaundice.py", label="Jaundice")
     st.sidebar.page_link("pages/6_Pneumonia.py", label="Pneumonia")
     
-model_path = "../Backend/pnemonia.sav"
+model_path = "../Backend/Pnemonia/pnemonia.sav"
 model = pickle.load(open(model_path, 'rb'))
 
 # Load model architecture
-model_architecture = ('../Backend/pnemonia_model_architecture.png')
+model_architecture = ('../Backend/Pnemonia/pnemonia_model_architecture.png')
     
 # Load saved training data
-train_data = ('../Backend/pnemonia_train_data.png')
+train_data = ('../Backend/Pnemonia/pnemonia_train_data.png')
 
 # Load saved model training history
-history_accuracy = ('../Backend/pnemonia_history_accuracy.png')
-history_loss = ('../Backend/pnemonia_history_loss.png')
+history_accuracy = ('../Backend/Pnemonia/pnemonia_history_accuracy.png')
+history_loss = ('../Backend/Pnemonia/pnemonia_history_loss.png')
 
 # Load saved confusion matrix
-cm = ('../Backend/pnemonia_cm.png')
+cm = ('../Backend/Pnemonia/pnemonia_cm.png')
 
 # Function to render the visualization page
 def render_visualization():

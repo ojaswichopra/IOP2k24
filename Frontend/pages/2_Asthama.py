@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 from streamlit_extras.add_vertical_space import add_vertical_space
 
-model_path = "../Backend/asthma.sav"
+model_path = "../Backend/Asthma/asthma.sav"
 model = pickle.load(open(model_path, 'rb'))
 
 # sidebar page links
@@ -156,12 +156,12 @@ def render_overview():
     )
     
 # Load saved training data
-train_data_ageDistribution = ('../Backend/asthma_train_data_ageDistribution.png')
-train_data_genderDistribution = ('../Backend/asthma_train_data_genderDistribution.png')
-train_data_inputParams = ('../Backend/asthma_train_data_inputParams.png')
-train_data_SeverityDistribution = ('../Backend/asthma_train_data_SeverityDsitribution.png')
-train_data_symptomFreq = ('../Backend/asthma_train_data_symptomFreq.png')
-cm = ('../Backend/asthma_cm.png')
+train_data_ageDistribution = ('../Backend/Asthma/asthma_train_data_ageDistribution.png')
+train_data_genderDistribution = ('../Backend/Asthma/asthma_train_data_genderDistribution.png')
+train_data_inputParams = ('../Backend/Asthma/asthma_train_data_inputParams.png')
+train_data_SeverityDistribution = ('../Backend/Asthma/asthma_train_data_SeverityDsitribution.png')
+train_data_symptomFreq = ('../Backend/Asthma/asthma_train_data_symptomFreq.png')
+cm = ('../Backend/Asthma/asthma_cm.png')
 
 def visualize_dataset_analysis():
     st.subheader("Dataset Analysis")

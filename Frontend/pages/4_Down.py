@@ -16,9 +16,11 @@ def authenticated_menu():
     st.sidebar.page_link("pages/6_Pneumonia.py", label="Pneumonia")
     
 def predict_image(image):
-    model_path = "../Backend/down.sav"
+    model_path = "../Backend/Down/down.sav"
     model = pickle.load(open(model_path, 'rb'))
     img_tensor = tf.convert_to_tensor(image)
+    if img_tensor.shape[-1] == 4:
+        img_tensor = img_tensor[:, :, :3]
     if img_tensor.shape[-1] != 3: 
         img_tensor = tf.image.grayscale_to_rgb(img_tensor)
     img_tensor = tf.image.resize(img_tensor, size =(250,250))
@@ -113,10 +115,41 @@ def render_overview():
         """
     )
 
+model_architecture = ('../Backend/Down/down_model_architecture.png')
+cm = ('../Backend/Down/down_cm.png')
+history_accuracy = ('../Backend/Down/down_history_accuracy.png')
+history_loss = ('../Backend/Down/down_history_loss.png')
+history_auc = ('../Backend/Down/down_history_auc.png')
+
+# Function to visualize model architecture
+def visualize_model_architecture():
+    st.subheader("Model Architecture")
+    add_vertical_space(1)
+    st.image(model_architecture,use_column_width=True)
+
+# Function to visualize confusion matrix
+def visualize_confusion_matrix():
+    st.subheader("Confusion Matrix")
+    st.image(cm,use_column_width=True)
+
+# Function to visualize model training history
+def visualize_training_history():
+    st.subheader("Training Metrics")
+    st.image(history_accuracy,use_column_width=True)
+    st.image(history_loss,use_column_width=True)
+    st.image(history_auc,use_column_width=True)
+    
+def render_visualization():
+    st.header("Our Model")
+    add_vertical_space(2)
+    visualize_model_architecture()
+    visualize_training_history()
+    visualize_confusion_matrix()
 
 def main():
     render_overview()
     st.write("---")
+    render_visualization()
     st.write("---")
     render_predict()
         

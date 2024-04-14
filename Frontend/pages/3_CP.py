@@ -68,6 +68,7 @@ def render_overview():
         developmental milestones, physical examination, and neuroimaging tests (e.g., MRI, CT scan).
         """
     )
+    add_vertical_space(1)
     st.image('../assets/cerebral_palsy_symptoms.jpeg', caption='Source: UCSF Department of Pediatrics', use_column_width=True)
     add_vertical_space(2)
     
@@ -78,12 +79,28 @@ def render_overview():
         such as the Centers for Disease Control and Prevention (CDC) or the Cerebral Palsy Alliance.
         """
     )   
+    
+cm = ('../Backend/CP/CP_cm.png')
+train_data = ('../Backend/CP/CP_train_data.png')
 
-
+def visualize_confusion_matrix():
+    st.subheader("Confusion Matrix")
+    st.image(cm,use_column_width=True)
+    
+def visualize_train_data():
+    st.subheader("Training Data")
+    st.image(train_data,use_column_width=True)
+    
+def render_visualization():
+    st.header("Our Model")
+    add_vertical_space(2)
+    visualize_train_data()
+    visualize_confusion_matrix()
 
 def main():
     render_overview()
     st.write("---")
+    render_visualization()
     
 if __name__ == "__main__":
     authenticated_menu()

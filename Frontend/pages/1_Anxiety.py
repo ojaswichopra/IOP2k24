@@ -94,11 +94,31 @@ def render_overview():
         anxiety disorder in children.
         """
     )
+    
+model_architecture = ('../Backend/Anxiety/anxiety_model_architecture.png')    
+cm1 = ('../Backend/Anxiety/anxiety_cm1.png')
+cm2 = ('../Backend/Anxiety/anxiety_cm2.png')
 
+def visualize_model_architecture():
+    st.subheader("Model Architecture")
+    st.image(model_architecture,use_column_width=True)
+    
+def visualize_confusion_matrix():
+    st.subheader("Confusion Matrix")
+    st.image(cm1,use_column_width=True,caption="SAD")
+    st.image(cm2,use_column_width=True,caption="GAD")
+    
+def render_visualization():
+    st.header("Our Model")
+    add_vertical_space(2)
+    visualize_model_architecture()
+    visualize_confusion_matrix()
+    
 
 def main():
     render_overview()
     st.write("---")
+    render_visualization()
 
 if __name__ == "__main__":
     authenticated_menu()

@@ -16,7 +16,7 @@ def authenticated_menu():
     st.sidebar.page_link("pages/6_Pneumonia.py", label="Pneumonia")
 
 def predict_image(image):
-    model_path = "../Backend/jaundice.sav"
+    model_path = "../Backend/Jaundice/jaundice.sav"
     model = pickle.load(open(model_path, 'rb'))
     img_tensor = tf.convert_to_tensor(image)
     if img_tensor.shape[-1] != 3: 
@@ -127,17 +127,17 @@ def render_overview():
     )
        
 # Load model architecture
-model_architecture = ('../Backend/jaundice_model_architecture.png')
+model_architecture = ('../Backend/Jaundice/jaundice_model_architecture.png')
     
 # Load saved training data
-train_data = ('../Backend/jaundice_train_data.png')
+train_data = ('../Backend/Jaundice/jaundice_train_data.png')
 
 # Load saved model training history
-history_accuracy = ('../Backend/jaundice_history_accuracy.png')
-history_loss = ('../Backend/jaundice_history_loss.png')
+history_accuracy = ('../Backend/Jaundice/jaundice_history_accuracy.png')
+history_loss = ('../Backend/Jaundice/jaundice_history_loss.png')
 
 # Load saved confusion matrix
-cm = ('../Backend/jaundice_cm.png')
+cm = ('../Backend/Jaundice/jaundice_cm.png')
 
 def render_visualization():
     st.header("Our Model")
